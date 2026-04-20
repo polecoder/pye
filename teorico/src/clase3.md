@@ -66,7 +66,7 @@ $$
 &=\scriptstyle{(\text{pro   piedades de conjuntos})}\\
 &\frac{P(B)-P(A\cap B)}{P(B)}\\
 &=\scriptstyle{(\text{operatoria})}\\
-&1-P(A\setminus B)
+&1-P(A\mid B)
 \end{aligned}
 $$
 
