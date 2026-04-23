@@ -42,8 +42,8 @@ jobs:
 
       - name: Commit and push PDFs
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "${{ secrets.GIT_USER_NAME }}"
+          git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
           git add .
           # Verifico si hay cambios antes de commitear
           if git diff --staged --quiet; then
