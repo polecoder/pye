@@ -71,7 +71,9 @@ Todo f.d.a. debe cumplir con los siguientes axiomas:
 - **Monotonía:** Es no decreciente. Si $x\leq y$ entonces $F(x)\leq F(y)$
 - **Límites en el infinito:** $\lim_{x\to-\infty}F(x)=0$ y $\lim_{x\to+\infty}F(x)=1$
 - **Continuidad por derecha:** En cada punto $x$, se cumple que $\lim_{y\to x^+}F(y)=F(x)$
-- **Saltos y probabilidad puntual:** El valor del "salto" vertical en la gráfica en un punto $x$ es exactamente la probabilidad $P(X=x)$. Si no hay salto (la función es continua en ese punto), la probabilidad puntual es cero.
+- **Saltos y probabilidad puntual:** El valor del "salto" vertical en la gráfica en un punto $x$ es exactamente la probabilidad $P(X=x)$. Si no hay salto (la función es continua en ese punto), la probabilidad puntual es cero. Además el límite por izquierda es:
+    
+    - $\lim_{y\to x^-}F(y)=P(X<x)$
 
 ## Distribución conjunta e independencia
 
