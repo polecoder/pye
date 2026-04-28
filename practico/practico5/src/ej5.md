@@ -1,7 +1,7 @@
 # Ejercicio 05 - Variables aleatorias discretas
 
 **Fecha:** 27-04-2026
-**Estado:** 🟢 Resuelto solo
+**Estado:** 🟡 Con ayuda
 
 ## Consigna
 
@@ -50,3 +50,38 @@ Lo cual tiene mucho sentido ya que la distribución es uniforme.
 
 - que se detenga de tal modo que la distancia a $a$ sea por lo menos 3 veces mayor que la distancia a $b$.
 
+Recordemos que $X$ es una variable aleatoria que representa un punto entre $a$ y $b$. Para representar lo que solicita la letra en una expresión que nos permita calcular la probabilidad, queremos que se cumpla la siguiente inecuación:
+
+$$
+\begin{aligned}
+&b-X<3(X-a)\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&b-X<3X-3a\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&b+3a<4X\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&\frac{b+3a}{4}<X\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&X>\frac{b+3a}{4}\\
+\end{aligned}
+$$
+
+Con esto, ya podemos calcular la probabilidad del evento que nos interesa:
+
+$$
+\begin{aligned}
+&P\left(\frac{b+3a}{4}<X<b\right)=\int_{(b+3a)/4}^{b}f_X(x)dx\\
+&\iff\scriptstyle{(\text{reemplazando por la definición de }f_X)}\\
+&P\left(\frac{b+3a}{4}<X<b\right)=\int_{(b+3a)/4}^{b}\frac{1}{b-a}dx\\
+&\iff\scriptstyle{(\text{operatoria y Barrow})}\\
+&P\left(\frac{b+3a}{4}<X<b\right)=\frac{b}{b-a}-\frac{(b+3a)/4}{b-a}\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&P\left(\frac{b+3a}{4}<X<b\right)=\frac{(3b-3a)/4}{b-a}\\
+&\iff\scriptstyle{(\text{operatoria})}\\
+&P\left(\frac{b+3a}{4}<X<b\right)=\frac{3}{4}\\
+\end{aligned}
+$$
+
+**Nota:** A este punto me di cuenta que en realidad calculé otra probabilidad, pues en la inecuación lo que busqué es que la distancia de $a$ sea al menos tres veces mayor que la de $b$; mientras que el ejercicio pedía lo contrario. No lo voy a rehacer porque es literalmente el mismo procedimiento.
+
+Esto concluye el ejercicio.
