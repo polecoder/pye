@@ -23,7 +23,7 @@ jobs:
           find . -type f -path "*/src/*.md" | while read md_file; do
             pdf_file=$(echo "$md_file" | sed 's|/src/|/dist/|; s|.md$|.pdf|')
             base_dir=$(dirname "$md_file") # carpeta src
-            img_dir=$(dirname "$base_dir")/images # carpeta images
+            img_dir=$(dirname "$base_dir")/img # carpeta img
 
             mkdir -p "$(dirname "$pdf_file")"
             
