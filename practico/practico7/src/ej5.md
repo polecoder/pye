@@ -1,7 +1,7 @@
 # Ejercicio 05 - Esperanza de una v.a.
 
 **Fecha:** 26-06-2026
-**Estado:** 🟢 Resuelto solo
+**Estado:** 🟡 Con ayuda
 
 ## Consigna
 
