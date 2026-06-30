@@ -131,6 +131,12 @@ Si $X$ e $Y$ son v.a. independientes, entonces:
 
 - $Var(X+Y)=Var(X)+Var(Y)$
 
+Esta propiedad también es válida para la resta, de hecho la versión más completa de esta propiedad es como describimos a continuación:
+
+- $Var(X\pm Y)=Var(X)+Var(Y)$
+
+Esto funciona porque justamente vimos que la varianza es cuadrática. Demostramos a continuación la versión simplificada que solo considera la suma (aunque la resta es bien simple una vez vista esta demostración).
+
 #### Demostración
 
 Para probar esta propiedad, recordar primero que:
