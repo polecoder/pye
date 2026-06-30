@@ -1,7 +1,7 @@
 # Ejercicio 06 - Esperanza y varianza de una v.a.
 
-**Fecha:** 29-06-2026
-**Estado:** 🟢 Resuelto solo
+**Fecha:** 28-06-2026
+**Estado:** 🟡 Con ayuda
 
 ## Consigna
 
@@ -10,10 +10,202 @@ Calcular la esperanza y la varianza de las siguientes distribuciones:
 1. $U\{1,\ldots,n\}$ (uniforme discreta)
 2. $U[a,b]$ (uniforme continua)
 3. $\mathcal{P}(\lambda)$ (Poisson)
-4. $\text{exp}(\lambda)$ (exponencial)
-5. $\text{Geo}(p)$ (geométrica)
+4. $exp(\lambda)$ (exponencial)
+5. $Geo(p)$ (geométrica)
 
 ## Resolución
+
+### Distribución #1
+
+- $U\{1,\ldots,n\}$ (uniforme discreta)
+
+La distribución está dada por:
+
+$$
+P(X=k)=\frac{1}{n}\quad\text{para todo }k\in\{1,\ldots,n\}
+$$
+
+Entonces podemos operar para calcular la esperanza:
+
+$$
+\begin{aligned}
+&E(X)\\
+&=\scriptstyle{(\text{definición de esperanza})}\\
+&\sum_{x\in R_X}xp(x)\\
+&=\scriptstyle{(\text{sustituyendo }p(x))}\\
+&\sum_{x\in R_X}\frac{x}{n}\\
+&=\scriptstyle{(\text{propiedades de sumatoria, sustituyendo el recorrido})}\\
+&\frac{1}{n}\cdot\sum_{x=1}^n x\\
+&=\scriptstyle{(\text{recordando que }\sum_1^nx=\frac{n(n+1)}{2})}\\
+&\frac{1}{n}\cdot\frac{n(n+1)}{2}\\
+&\scriptstyle{(\text{operatoria})}\\
+&\frac{n+1}{2}
+\end{aligned}
+$$
+
+Ahora operamos para calcular la varianza:
+
+$$
+\begin{aligned}
+&Var(X)\\
+&=\scriptstyle{(\text{propiedades de varianza})}\\
+&E(X^2)-E(X)^2\\
+&=\scriptstyle{(\text{reemplazando lo conocido})}\\
+&E(X^2)-\left(\frac{n+1}{2}\right)^2\\
+&=\scriptstyle{(\text{definición de esperanza})}\\
+&\sum_{x\in R_X}xp(x)-\left(\frac{n+1}{2}\right)^2\\
+&=\scriptstyle{(\text{mismo razonamiento que en el cálculo de }E(X))}\\
+&\frac{1}{n}\cdot\sum_{x=1}^nx^2-\left(\frac{n+1}{2}\right)^2\\
+&=\scriptstyle{(\text{sabiendo que }\sum_{x=1}^nx^2=\frac{n(n+1)(2n+1)}{6})}\\
+&\frac{1}{n}\cdot\frac{n(n+1)(2n+1)}{6}-\left(\frac{n+1}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{(n+1)(2n+1)}{6}-\left(\frac{n+1}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&(n+1)\cdot\left(\frac{2n+1}{6}-\frac{n+1}{4}\right)\\
+&=\scriptstyle{(\text{operatoria})}\\
+&(n+1)\cdot\left(\frac{4n+2-3n-3}{12}\right)\\
+&=\scriptstyle{(\text{operatoria})}\\
+&(n+1)\cdot\left(\frac{n-1}{12}\right)\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{n^2-1}{12}\\
+\end{aligned}
+$$
+
+Esto concluye el cálculo para esta distribución.
+
+### Distribución #2
+
+- $U[a,b]$ (uniforme continua)
+
+La densidad de esta distribución está dada por:
+
+$$
+f(x)=\frac{1}{b-a}\quad\forall x\in[a,b]
+$$
+
+Entonces podemos operar para calcular la esperanza:
+
+$$
+\begin{aligned}
+&E(X)\\
+&=\scriptstyle{(\text{definición de esperanza})}\\
+&\int_{-\infty}^{+\infty}xp(x)dx\\
+&=\scriptstyle{(\text{reemplazando por }p(x))}\\
+&\int_{-\infty}^{+\infty}\frac{x}{b-a}dx\\
+&=\scriptstyle{(\text{operatoria y considerar solo la parte relevante de la integral})}\\
+&\frac{1}{b-a}\int_a^b xdx\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{1}{b-a}\cdot\left[\frac{x^2}{2}\right]_a^b\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{1}{b-a}\cdot\frac{b^2-a^2}{2}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{1}{b-a}\cdot\frac{(b+a)(b-a)}{2}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{b+a}{2}\\
+\end{aligned}
+$$
+
+Ahora operamos para calcular la varianza:
+
+$$
+\begin{aligned}
+&Var(X)\\
+&=\scriptstyle{(\text{propiedades de varianza})}\\
+&E(X^2)-E(X)^2\\
+&=\scriptstyle{(\text{reemplazando lo conocido})}\\
+&E(X^2)-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{definición de esperanza})}\\
+&\int_{-\infty}^{+\infty}x^2p(x)dx-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{mismo razonamiento que en el cálculo de la esperanza})}\\
+&\frac{1}{b-a}\int_a^b x^2dx-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{1}{b-a}\cdot\left[\frac{x^3}{3}\right]_a^b-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{1}{b-a}\cdot\frac{b^3-a^3}{3}-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{recordando que }b^3-a^3=(b-a)(b^2+ab+a^2))}\\
+&\frac{1}{b-a}\cdot\frac{(b-a)(b^2+ab+a^2)}{3}-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{b^2+ab+a^2}{3}-\left(\frac{b+a}{2}\right)^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{b^2+ab+a^2}{3}-\frac{b^2+2ab+a^2}{4}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{4b^2+4ab+4a^2-3b^2-6ab-3a^2}{12}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{b^2-2ab+a^2}{12}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\frac{(b-a)^2}{12}\\
+\end{aligned}
+$$
+
+Esto concluye el cálculo para esta distribución.
+
+### Distribución #3
+
+- $\mathcal{P}(\lambda)$ (Poisson)
+
+La distribución está dada por:
+
+$$
+P(X=k)=\frac{\lambda^ke^{-\lambda}}{k!}
+$$
+
+Entonces podemos operar para calcular la esperanza:
+
+$$
+\begin{aligned}
+&E(X)\\
+&=\scriptstyle{(\text{definición de esperanza})}\\
+&\sum_{x\in R_X}xp(x)\\
+&=\scriptstyle{(\text{reemplazando por los valores conocidos})}\\
+&\sum_{x=1}^{+\infty}\frac{x\lambda^xe^{-\lambda}}{k!}\\
+&=\scriptstyle{(\text{propiedades de sumatoria})}\\
+&e^{-\lambda}\sum_{x=1}^{+\infty}\frac{x\lambda^x}{x!}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&e^{-\lambda}\sum_{x=1}^{+\infty}\frac{\lambda^x}{x-1!}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\lambda e^{-\lambda}\sum_{x=1}^{+\infty}\frac{\lambda^{x-1}}{x-1!}\quad(*_1)\\
+\end{aligned}
+$$
+
+**Observación:** Notemos que lo que tenemos en $*_1$ es exactamente la serie de Taylor para $e^{\lambda}$. Podemos simplificar con esto en mente:
+
+$$
+\begin{aligned}
+&E(X)\\
+&=\scriptstyle{(\text{retomando desde }*_1)}\\
+&\lambda e^{-\lambda}\sum_{x=1}^{+\infty}\frac{\lambda^{x-1}}{x-1!}\\
+&=\scriptstyle{(\text{por la observación})}\\
+&\lambda e^{-\lambda}e^{\lambda}\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\lambda\\
+\end{aligned}
+$$
+
+Ahora operamos para calcular la varianza:
+
+$$
+\begin{aligned}
+&Var(X)\\
+&=\scriptstyle{(\text{propiedades de varianza})}\\
+&E(X^2)-E(X)^2\\
+&=\scriptstyle{(\text{reemplazando los valores conocidos y operatoria})}\\
+&E(X(X-1))+E(X)-\lambda^2\\
+&=\scriptstyle{(\text{definición de esperanza y reemplazando los valores conocidos})}\\
+&\sum_{i=1}^{+\infty}(x(x-1)p(x))+\lambda-\lambda^2\\
+&=\scriptstyle{(\text{reemplazando por }p(x))}\\
+&\sum_{i=1}^{+\infty}\left(\frac{x(x-1)\lambda^xe^{-\lambda}}{x!}\right)+\lambda-\lambda^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&e^{-\lambda}\sum_{i=1}^{+\infty}\left(\frac{\lambda^x}{(x-2)!}\right)+\lambda-\lambda^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&e^{-\lambda}\lambda^2\sum_{i=1}^{+\infty}\left(\frac{\lambda^{x-2}}{(x-2)!}\right)+\lambda-\lambda^2\\
+&=\scriptstyle{(\text{desarrollo de Taylor})}\\
+&e^{-\lambda}\lambda^2e^{\lambda}+\lambda-\lambda^2\\
+&=\scriptstyle{(\text{operatoria})}\\
+&\lambda\\
+\end{aligned}
+$$
+
+Esto concluye el cálculo para esta distribución.
 
 ### Distribución #4
 
