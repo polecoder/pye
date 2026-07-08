@@ -75,7 +75,7 @@ Esto demuestra lo que queríamos probar. $\blacksquare$.
 
 - $s_n^2\xrightarrow[n]{\text{c.s.}}\sigma^2$
 
-Notemos que $s^2_n$ tiene una forma muy similar $\sigma^2_n$, de quién ya probamos convergencia casi segura a $\sigma^2$. Desarrollemos sobre este punto:
+Notemos que $s^2_n$ tiene una forma muy similar a $\sigma^2_n$, de quién ya probamos convergencia casi segura a $\sigma^2$. Desarrollemos sobre este punto:
 
 $$
 \begin{aligned}
@@ -99,6 +99,39 @@ $$
 &\iff\scriptstyle{(\text{operatoria})}\\
 &s_n^2\xrightarrow[n]{c.s.}\sigma^2\\
 \end{aligned}
+$$
+
+Esto demuestra lo que queríamos probar. $\blacksquare$.
+
+#### Demostración #3
+
+- $\sigma_n\xrightarrow[n]{\text{c.s.}}\sigma$
+
+Notemos que $\sigma_n=\sqrt{\sigma_n^2}$. Ya probamos anteriormente que $\sigma_n^2\xrightarrow[n]{c.s.}\sigma^2$. Podemos usar esta afirmación en conjunto con la siguiente propiedad de convergencia casi segura:
+
+- Si $X_n\xrightarrow[n]{\text{c.s.}}X$ y $g:\mathbb{R}\to\mathbb{R}$ es continua entonces $g(X_n)\xrightarrow[n]{\text{c.s.}}g(X)$.
+
+Consideramos $g(X)=\sqrt{x}$, una función continua y observamos que $\sigma_n=g(\sigma^2_n)$ con esta nueva notación. Aplicando la propiedad concluimos que:
+
+$$
+\sigma_n\xrightarrow[n]{c.s.}\sqrt{\sigma^2}=\sigma
+$$
+
+Esto demuestra lo que queríamos probar. $\blacksquare$.
+
+#### Demostración #4
+
+- $s_n\xrightarrow[n]{\text{c.s.}}\sigma$
+
+El razonamiento es totalmente análogo a la demostración anterior. Sabemos que:
+
+- $s^2_n\xrightarrow[n]{c.s.}\sigma^2$ y
+- Si $X_n\xrightarrow[n]{\text{c.s.}}X$ y $g:\mathbb{R}\to\mathbb{R}$ es continua entonces $g(X_n)\xrightarrow[n]{\text{c.s.}}g(X)$.
+
+Consideramos $g(X)=\sqrt{x}$, una función continua y observamos que $s_n=g(s^2_n)$ con esta nueva notación. Aplicando la propiedad concluimos que:
+
+$$
+s_n\xrightarrow[n]{c.s.}\sqrt{\sigma^2}=\sigma
 $$
 
 Esto demuestra lo que queríamos probar. $\blacksquare$.
