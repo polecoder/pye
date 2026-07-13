@@ -28,7 +28,7 @@ Desarrollamos para demostrar que el estimador hallado es insesgado.
 $$
 \begin{aligned}
 &E(\hat\lambda)\\
-&=\scriptstyle{(\text{definción de }\hat\lambda)}\\
+&=\scriptstyle{(\text{definición de }\hat\lambda)}\\
 &E(\overline{X_n})\\
 &=\scriptstyle{(\text{definición de promedio muestral})}\\
 &E\left(\frac{1}{n}\sum_{i=1}^nX_i\right)\\
@@ -70,7 +70,7 @@ $$
 &\log(L(\lambda))\\
 &=\scriptstyle{(\text{definición de }L)}\\
 &\sum_{i=1}^n\log\left(\frac{\lambda^{x_i}e^{-\lambda}}{x_i!}\right)\\
-&=\scriptstyle{(\text{propiedades de logarítmo})}\\
+&=\scriptstyle{(\text{propiedades de logaritmo})}\\
 &\sum_{i=1}^n(\log(\lambda^{x_i})+\log(e^{-\lambda})-\log(x_i!))\\
 &=\scriptstyle{(\text{propiedades de logaritmo})}\\
 &\sum_{i=1}^n(x_i\log(\lambda)-\lambda-\log(x_i!))\\
@@ -104,12 +104,12 @@ $$
 &\sum_{i=1}^nx_i=n\lambda\\
 &\iff\scriptstyle{(\text{operatoria})}\\
 &\frac{1}{n}\sum_{i=1}^nx_i=\lambda\\
-&\iff\scriptstyle{(\text{definción de promedio muestral})}\\
+&\iff\scriptstyle{(\text{definición de promedio muestral})}\\
 &\boxed{\hat\lambda=\overline{X}_n}\\
 \end{aligned}
 $$
 
-Este último paso ya nos deja con el estimador que buscabamos $\hat\lambda$.
+Este último paso ya nos deja con el estimador que buscábamos $\hat\lambda$.
 Efectivamente este último coincide con el que hallamos mediante el método de los momentos.
 
 Esto concluye el ejercicio.

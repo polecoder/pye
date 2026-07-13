@@ -60,7 +60,7 @@ $$
 &\sigma^2+\cancel{\mu^2}-(Var(\overline{X_n})+\cancel{\mu^2})\\
 &=\scriptstyle{(\text{definición de }\overline{X_n})}\\
 &\sigma^2-Var\left(\frac{1}{n}\sum_{i=1}^nX_i\right)\\
-&=\scriptstyle{(\text{propieades de varianza cuando las variables son independientes})}\\
+&=\scriptstyle{(\text{propiedades de varianza cuando las variables son independientes})}\\
 &\sigma^2-\frac{1}{n^2}\sum_{i=1}^nVar(X_i)\\
 &=\scriptstyle{(Var(X_i)=\sigma^2)}\\
 &\sigma^2-\frac{1}{n^2}\cdot n\sigma^2\\
