@@ -182,3 +182,44 @@ $$
 \left[\overline{X}_n-\frac{t_{\alpha/2}(n-1)S_n}{\sqrt{n}},\overline{X}_n+\frac{t_{\alpha/2}(n-1)S_n}{\sqrt{n}}\right]
 }
 $$
+
+---
+
+Después de esto, el teórico abarca otros casos que tienen un análisis similar a estos, solo que son muy extensos.
+A continuación daremos intervalos de confianza para casos particulares, sin hacer el análisis que hicimos para estos casos.
+
+### Intervalo de confianza para $\mu$ con $\sigma^2$ desconocido para $n$ grande
+
+Si $X\in L^2$ y $n$ es suficientemente grande, un intervalo aproximado es:
+
+$$
+\boxed{
+\left[\overline{X}_n-\frac{S_nz_{\alpha/2}}{\sqrt{n}},\overline{X}_n+\frac{S_nz_{\alpha/2}}{\sqrt{n}}\right]
+}
+$$
+
+**Nota:** Notemos que en este caso, a diferencia de los anteriores, la distribución no tiene porque ser la normal.
+
+### Intervalo de confianza para $p$ cuando $X\sim Ber(p)$ para $n$ grande
+
+Si $X\sim Ber(p)$, entonces un intervalo de confianza aproximado para $p$ al nivel de confianza de $1-\alpha$ cuando $X\sim Ber(p)$.
+
+$$
+\boxed{
+\left[\overline{X}_n-\frac{\sqrt{\overline{X}_n(1-\overline{X}_n)}z_{\alpha/2}}{\sqrt{n}},\overline{X}_n+\frac{\sqrt{\overline{X}_n(1-\overline{X}_n)}z_{\alpha/2}}{\sqrt{n}}\right]
+}
+$$
+
+### Intervalo de confianza para $\sigma^2$ en el caso en que $X\sim N(\mu,\sigma^2)$
+
+En este caso, un intervalo de confianza aproximado para $\sigma^2$ al nivel de confianza de $1-\alpha$ es:
+
+$$
+\boxed{
+\left[
+\frac{(n-1)S_n^2}{\chi^2_{\alpha/2}(n-1)},\frac{(n-1)S_n^2}{\chi^2_{1-\alpha/2}(n-1)}
+\right]
+}
+$$
+
+Donde $\chi_p^2(n)=F^{-1}(1-p)$, con $F$ es la función de distribución que corresponde a una distribución $\chi_n^2$.
